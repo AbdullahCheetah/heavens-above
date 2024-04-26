@@ -7,7 +7,7 @@
   "scripts": {
     "start": "node run.js",
     "test": "echo \"No tests specified.\" && exit 0",
-    "lint": "eslint .", 
+    "lint": "eslint .",
     "build": "echo \"Build script not specified\" && exit 0",
     "docs": "echo \"Docs generation script not specified\" && exit 0"
   },
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "eslint": "^9.1.1",
+    "firebase-tools": "^13.7.5",
     "globals": "^15.0.0"
   }
 }
