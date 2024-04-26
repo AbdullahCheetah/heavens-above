@@ -11,5 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Run maintenance script
-      run: node run.js 
+    - name: use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+
+    - run: npm install
+    - run: npm start
+    
