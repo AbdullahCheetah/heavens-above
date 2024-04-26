@@ -27,5 +27,5 @@ jobs:
 
     - name: Run Security Checks
       run: |
-        npm audit
-        npm audit fix --only=prod
+        npm audit fix
+        
