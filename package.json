@@ -7,9 +7,9 @@
   "scripts": {
     "start": "node run.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint .", // Assuming eslint is used for linting
-    "build": "echo \"Build script not specified\" && exit 0", // Placeholder for build script
-    "docs": "echo \"Docs generation script not specified\" && exit 0" // Placeholder for documentation generation
+    "lint": "eslint .", 
+    "build": "echo \"Build script not specified\" && exit 0",
+    "docs": "echo \"Docs generation script not specified\" && exit 0"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
