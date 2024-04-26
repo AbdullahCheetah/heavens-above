@@ -1,0 +1,34 @@
+name: Documentation Deployment
+
+on:
+  push:
+    branches:
+      - main  # You can change this to the branch where your documentation resides
+  pull_request:
+    branches:
+      - main  # You can change this to the branch where your documentation resides
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2
+        with:
+          node-version: '15'  # Specify your required Node.js version here
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build documentation
+        run: npm run docs  # Assuming you have a script to build your documentation defined in package.json
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs  # Change this to the directory where your built documentation resides
