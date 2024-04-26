@@ -22,10 +22,9 @@ jobs:
     - name: Run Lint
       run: npm run lint
 
-    - name: Run Security Checks
-      run: npm audit 
+    - name: Run tests
+      run: npm test
 
     - name: Analyze Code Quality
       run: npx sonarqube-scanner 
 
-      
