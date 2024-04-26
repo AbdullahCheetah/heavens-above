@@ -1,0 +1,15 @@
+name: Scheduled Maintenance
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Run maintenance script
+      run: node maintenance.js # Replace with your actual maintenance script
