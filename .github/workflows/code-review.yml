@@ -25,6 +25,7 @@ jobs:
     - name: Run tests
       run: npm test
 
-    - name: Analyze Code Quality
-      run: npx sonarqube-scanner 
+    - name: Run Security Checks
+      run: npm audit 
+
 
