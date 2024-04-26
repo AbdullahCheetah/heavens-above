@@ -12,14 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Convert README to HTML
+      - name: Prepare Pages Directory
         run: |
-          echo "<html><body><pre>" > index.html
-          cat README.md >> index.html
-          echo "</pre></body></html>" >> index.html
+          mkdir pages
+          cp README.md pages/index.md
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
+          publish_dir: ./pages
