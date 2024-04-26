@@ -1,0 +1,33 @@
+name: Deployment Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: 
+      name: production
+      url: ${{ steps.deploy.outputs.deployment-url }}
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '12.x'
+
+    - name: Install Dependencies
+      run: npm install
+
+    # Add build step if you have a build script in your package.json
+    - name: Run Script
+      run: npm start
+
+    # Add actual deployment steps here (e.g., to Heroku, AWS, Azure, etc.)
+    - name: Deploy to Production
+      run: echo "Replace this with your deployment command"
+      id: deploy
+      # Set deployment-url as an output of this step if applicable
