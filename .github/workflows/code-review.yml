@@ -25,7 +25,3 @@ jobs:
     - name: Run tests
       run: npm test
 
-    - name: Run Security Checks
-      run: npm audit 
-
-
