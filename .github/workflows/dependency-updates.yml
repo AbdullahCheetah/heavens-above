@@ -1,33 +1,33 @@
 name: Dependency Updates
 
 on:
-    push:
-      branches: [ main ]
+  push:
+    branches: [ main ]
 
 jobs:
   update:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Use Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '12.x'
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '15.x' # or '16.x'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Check for updates
-      run: npx npm-check-updates -u
+      - name: Check for updates
+        run: npx npm-check-updates -u
 
-    - name: Install updated dependencies
-      run: npm install
+      - name: Install updated dependencies
+        run: npm install
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v3
-      with:
-        commit-message: Update dependencies
-        title: 'Update Dependencies'
-        branch: 'update-dependencies'
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update dependencies
+          title: 'Update Dependencies'
+          branch: 'update-dependencies'
