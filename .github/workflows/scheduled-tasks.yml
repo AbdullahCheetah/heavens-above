@@ -1,9 +1,9 @@
 name: Scheduled Maintenance
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight
-
+    push:
+      branches: [ main ]
+      
 jobs:
   maintenance:
     runs-on: ubuntu-latest
